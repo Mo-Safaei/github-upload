@@ -35,7 +35,7 @@ INSTALLED_APPS = [
         #My Apps
     'learning_logs',
     'users',
-    'django.contrib.gis',
+
 
     #Third Party Apps
     'bootstrap4',
@@ -83,18 +83,12 @@ WSGI_APPLICATION = 'music_info.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'music_db',
-        'USER': 'postgres',
-        'PASSWORD': '123456789',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
