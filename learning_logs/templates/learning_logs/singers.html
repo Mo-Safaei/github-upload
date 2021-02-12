@@ -1,0 +1,26 @@
+{% extends "learning_logs/base.html" %}
+
+
+
+{% block page_header %}
+  <h1>Singers</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+
+  <ul>
+    {% for a in singers %}
+      <li><h3>
+      	<a href="{% url 'learning_logs:songs' a.id%}">{{ a }}</a>
+      </h3></li>
+    {% empty %}
+      <li><h3>No singers have been added yet.</h3></li>
+    {% endfor %}
+  </ul>
+
+  <h3><a href="{% url 'learning_logs:new_singer' %}">
+    Add a new singer
+  </a></h3>
+
+{% endblock content %}

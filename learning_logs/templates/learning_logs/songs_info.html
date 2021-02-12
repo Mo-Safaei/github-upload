@@ -1,0 +1,59 @@
+{% extends "learning_logs/base.html" %}
+
+
+
+{% block page_header %}
+  <h1>Songs Information</h1>
+     {% for a in songs_Info %}
+      <h3>
+      	<a >{{ a }}</a>
+      </h3>
+
+      <h3>
+      	<a href="{% url 'learning_logs:edit_song' a.id%}">Edit Song Info</a>
+      </h3>
+      <h3>
+      	<a href="{% url 'learning_logs:delete_song' a.id%}">Delete Song</a>
+      </h3>
+
+    {% endfor %}
+{% endblock page_header %}
+
+
+{% block content %}
+
+<table class="table">
+ {% for a in songs_Info %}
+  <thead>
+    <tr>
+{#      <th scope="col">Song id</th>#}
+      <th scope="col">Song Name</th>
+      <th scope="col">Singer Name</th>
+      <th scope="col">Album</th>
+      <th scope="col">Released</th>
+      <th scope="col">Composer</th>
+      <th scope="col">Song Writer</th>
+      <th scope="col">Lyrics</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+{#      <th scope="row">{{ a.id }}</th>#}
+      <td>{{ a.song_name }}</td>
+      <td>{{ a.singer_name }}</td>
+      <td>{{ a.Album }}</td>
+      <td>{{ a.Released }}</td>
+      <td>{{ a.Composer }}</td>
+      <td>{{ a.Songwriter }}</td>
+      <td>{{ a.Lyrics }}</td>
+    </tr>
+  </tbody>
+
+ {% empty %}
+      <li><h3>No Songs have been added yet.</h3></li>
+
+    {% endfor %}
+</table>
+{% endblock content %}
+
