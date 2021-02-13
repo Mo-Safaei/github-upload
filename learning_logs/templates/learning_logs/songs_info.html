@@ -22,9 +22,9 @@
 
 {% block content %}
 
-<table class="table">
+<table class="table table-bordered">
  {% for a in songs_Info %}
-  <thead>
+  <thead class="thead-dark">
     <tr>
 {#      <th scope="col">Song id</th>#}
       <th scope="col">Song Name</th>
@@ -37,8 +37,8 @@
 
     </tr>
   </thead>
-  <tbody>
-    <tr>
+  <tbody >
+    <tr class="table-secondary">
 {#      <th scope="row">{{ a.id }}</th>#}
       <td>{{ a.song_name }}</td>
       <td>{{ a.singer_name }}</td>
